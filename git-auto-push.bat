@@ -1,6 +1,4 @@
-@echo off
-chcp 65001 > nul  :: 解决中文乱码问题
-setlocal enabledelayedexpansion
+
 :: ===================== 【文件夹路径】=====================
 cd /d "D:\notes"
 :: =====================================================================
@@ -12,8 +10,8 @@ set "datetime=!datetime: =0!"
 
 :: 2. 执行 Git 操作
 echo.
-echo ===================== 执行 Git 提交 =====================
-echo 当前提交信息：updated%datetime%
+echo ===================== Implement Git Commit =====================
+echo Commit Messages：updated%datetime%
 echo --------------------------------------------------------
 
 git add .
@@ -21,5 +19,5 @@ git commit -m "updated%datetime%"
 git push
 
 echo.
-echo ===================== 操作完成 =====================
+echo ===================== Finished =====================
 pause

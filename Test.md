@@ -66,5 +66,15 @@ $$
 \int_{a}^{1}x\operatorname{arctan}\,\,x\,\,\mathrm{d}x
 \]
 
+\[
+\begin{cases}
+	x+y+z=0\\
+	x-2y-9z=12\\
+	3x-7y+2z=2
+\end{cases}
+\]
+
+
+
 
 
