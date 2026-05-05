@@ -1,5 +1,9 @@
 # LaTeX笔记
 
+[toc]
+
+
+
 ## 常用的package及说明
 
 ```latex
@@ -142,6 +146,37 @@
 |  $\int_a^b f(x)dx$  |  `\int_a^b f(x)dx`  |
 |       $\iint$       |       `\iint`       |
 |       $\oint$       |       `\oint`       |
+|         $$          |         ``          |
+|         $$          |         ``          |
+|         $$          |         ``          |
+
+**矩阵**的表示
+
+```latex
+\left [
+\begin{array}{ccc}
+	a & b & c\\
+	d & e & f\\
+	g & h & i\\
+\end{array}
+\right ]
+```
+
+\[
+\left [
+\begin{array}{ccc}
+	a & b & c\\
+	d & e & f\\
+	g & h & i\\
+\end{array}
+\right ]
+\]
+
+
+
+
+
+
 
 我们发现有时候巨型算子的行内形式非常不美观，这时可以在算子前加上`\limits`就可以变回行间形式
 
