@@ -9,7 +9,7 @@ This repository is used to collect my personal notes.
 ```mermaid
 mindmap
 	root((note))
-		LaTex
+		LaTeX
 		Typora
 		...
 ```

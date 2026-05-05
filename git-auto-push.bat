@@ -1,21 +1,27 @@
+@echo off
+chcp 65001 > nul  :: 解决中文乱码
+setlocal enabledelayedexpansion
 
 :: ===================== 【文件夹路径】=====================
-cd /d "D:\notes"
+cd /d "D:\notes"  :: 改成你的路径，比如你的MarkdownNote.md所在文件夹
 :: =====================================================================
 
-:: 1. 获取当前时间，格式：YYYYMMDDHHMM（如 202605051502）
-set "datetime=%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%"
-:: 处理小时为个位数时的空格问题（比如  9:05 → 09:05）
-set "datetime=!datetime: =0!"
+:: 1. 用wmic获取固定格式的时间
+for /f "skip=1 tokens=1-6 delims=.+- " %%a in ('wmic os get localdatetime') do (
+    if "%%a" NEQ "" (
+        set "datetime=%%a"
+        set "datetime=!datetime:~0,12!"  :: 截取前12位：年4+月2+日2+时2+分2
+    )
+)
 
 :: 2. 执行 Git 操作
 echo.
 echo ===================== Implement Git Commit =====================
-echo Commit Messages：updated%datetime%
+echo Commit Messages: updated!datetime!
 echo --------------------------------------------------------
 
 git add .
-git commit -m "updated%datetime%"
+git commit -m "updated!datetime!"
 git push
 
 echo.
