@@ -70,7 +70,7 @@ $$
 \begin{cases}
 	x+y+z=0\\
 	x-2y-9z=12\\
-	3x-7y+2z=2
+	3x-7y+2z=21
 \end{cases}
 \]
 
