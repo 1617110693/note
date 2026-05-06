@@ -74,6 +74,17 @@ $$
 \end{cases}
 \]
 
+$$S=\int_{x}\left\{\frac12\sum_{a}\partial^{\mu}\chi_{a}\partial_{\mu}\chi_{a}+V(\rho)\right\}$$
+\[
+A=\left(\begin{array}{cccc}
+f\left(\alpha_1, \alpha_1\right) & f\left(\alpha_1, \alpha_2\right) & \cdots & f\left(\alpha_1, \alpha_n\right) \\
+f\left(\alpha_2, \alpha_1\right) & f\left(\alpha_2, \alpha_2\right) & \cdots & f\left(\alpha_2, \alpha_n\right) \\
+\vdots & \vdots & & \vdots \\
+f\left(\alpha_n, \alpha_1\right) & f\left(\alpha_n, \alpha_2\right) & \cdots & f\left(\alpha_n, \alpha_n\right)
+\end{array}\right)
+\]
+
+
 
 
 
