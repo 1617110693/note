@@ -86,6 +86,6 @@ f\left(\alpha_n, \alpha_1\right) & f\left(\alpha_n, \alpha_2\right) & \cdots & f
 
 
 
-
-
-
+$$
+\int _ { 0 } ^ { 2 } \frac { x } { \sqrt { 1 + x ^ { 2 } } } \mathrm { d } x
+$$
