@@ -216,9 +216,101 @@ x^3^
 
 > 《静夜思》作于唐玄宗开元十四年（726年），时年二十六岁的李白身处扬州（今属江苏）的旅舍中。是年春，李白踏上前往扬州的旅程，入秋后却不幸染病，只能卧于旅舍。旧历九月十五日左右的夜晚，天空中月明星稀，李白抬头，望见一轮皓月高悬，在这静谧的氛围中，漂泊他乡的孤寂与对故乡的思念之情如潮水般涌上心头，促使他写下了这首流传千古、中外闻名的《静夜思》。据考证，与之同期同地创作的诗篇，还有《秋夕旅怀》。
 
-### 3.引用内混合语法
+### 2.引用内混合语法
 
 引用内可嵌套加粗、列表、链接等所有语法
+
+### 3.Admonitions（提示块）
+
+**核心语法模板**
+
+```markdown
+> [!类型]
+> 这里写提示内容，支持多行、Markdown格式（比如`代码高亮`、**加粗**、列表等）
+```
+
+**NOTE 普通提示**
+
+```markdown
+> [!NOTE]
+> In theory, NanaZip Classic can run on Windows 10 (Build 10240) or later if `ucrtbase.dll` in the `System32` folder has been replaced with version 10.0.19041.0 or later. However, this is a high-risk operation and is not recommended.
+```
+
+示例：
+
+> [!NOTE]
+>
+> In theory, NanaZip Classic can run on Windows 10 (Build 10240) or later if `ucrtbase.dll` in the `System32` folder has been replaced with version 10.0.19041.0 or later. However, this is a high-risk operation and is not recommended.
+
+
+
+**TIP 技巧建议**
+
+```markdown
+> [!TIP]
+> 写 README 推荐多用提示块，层次清晰、可读性更强。
+```
+
+示例：
+
+> [!TIP]
+>
+> 写 README 推荐多用提示块，层次清晰、可读性更强。
+
+
+
+**IMPORTANT 重要信息**
+
+```markdown
+> [!IMPORTANT]
+> 环境版本必须 ≥ Python 3.9，低版本无法兼容依赖库。
+```
+
+示例：
+
+> [!IMPORTANT]
+>
+> 环境版本必须 ≥ Python 3.9，低版本无法兼容依赖库。
+
+
+
+**WARNING 警告提醒**
+
+```markdown
+> [!WARNING]
+> 测试环境请勿接入公网，避免安全漏洞被利用。
+```
+
+示例：
+
+> [!WARNING]
+>
+> 测试环境请勿接入公网，避免安全漏洞被利用。
+
+
+
+**CAUTION 高危禁止**
+
+```markdown
+> [!CAUTION]
+> NanaZip can be used as portable version if you use the official portable release package. It's designed for debugging/testing/development purpose and scenarios (a.k.a. Server Core, Windows PE, Windows RE, and Wine) really need portable version. But please note that some features is not available, such as context menu and file associations. Some issues will not be fixed if you are using NanaZip in portable mode.
+```
+
+示例：
+
+> [!CAUTION] 
+>
+> NanaZip can be used as portable version if you use the official portable release package. It's designed for debugging/testing/development purpose and scenarios (a.k.a. Server Core, Windows PE, Windows RE, and Wine) really need portable version. But please note that some features is not available, such as context menu and file associations. Some issues will not be fixed if you are using NanaZip in portable mode.
+
+
+
+|  类型语法   | 主题色调 | 图标 |       适用场景       |
+| :---------: | :------: | :--: | :------------------: |
+|   `NOTE`    |   蓝色   |  ℹ️   |  普通说明、补充备注  |
+|    `TIP`    |   绿色   |  💡   | 技巧、建议、最佳实践 |
+| `IMPORTANT` |   紫色   |  ❗   |  关键信息、必看规则  |
+|  `WARNING`  |   黄色   |  ⚠️   |  风险提醒、注意事项  |
+|  `CAUTION`  |   红色   |  🚫   |  高危操作、禁止行为  |
 
 
 
@@ -492,7 +584,7 @@ $$
 
 
 
-## 十五、特殊拓展元素
+## 十五、特殊拓展
 
 ### 1.脚注
 
@@ -514,7 +606,87 @@ $$
 
 示例：
 
-[toc]
+> [toc]
+
+### 3.Badge 语法（Shields.io）
+
+**原理说明**
+
+Markdown 原生无彩色按钮 / 标签，借助 Shields.io 在线生成 SVG 徽章图片，再用 Markdown 图片 + 超链接 语法实现可跳转、彩色炫酷标签。
+
+**基础核心语法**
+
+```markdown
+[![标签说明](徽章图片URL)](跳转链接地址)
+```
+
+* `[]`：图片替代文字（可随便写）
+
+* `()` 第一个：Shields.io 生成的徽章地址
+
+* `()` 第二个：点击跳转的链接，留空则不跳转
+
+**通用模板**
+
+基础双色标签模板
+
+```markdown
+https://img.shields.io/badge/左侧文字-右侧文字-颜色.svg
+```
+
+使用方式：拼好链接放进上面语法即可。
+
+示例：
+
+```markdown
+[![](https://img.shields.io/badge/Github-主页-green.svg)](https://xxx.com)
+```
+
+[![](https://img.shields.io/badge/Github-主页-green.svg)](https://github.com/1617110693/notes)
+
+**常用颜色对照表（附示例）**
+
+|  颜色关键字   |      适用场景      |                             示例                             |
+| :-----------: | :----------------: | :----------------------------------------------------------: |
+| `brightgreen` | 成功、下载量、正常 | [![](https://img.shields.io/badge/状态-正常-brightgreen.svg)](https://xxx.com) |
+|    `green`    |    通用绿色标签    |  [![](https://img.shields.io/badge/版本-V1.0-green.svg)]()   |
+|    `blue`     | 官方、渠道、稳定版 |  [![](https://img.shields.io/badge/渠道-正式版-blue.svg)]()  |
+|   `orange`    | 测试、预览、非正式 | [![](https://img.shields.io/badge/版本-预览版-orange.svg)]() |
+|     `red`     |  警告、废弃、高危  |  [![](https://img.shields.io/badge/状态-已废弃-red.svg)]()   |
+|   `yellow`    |    待定、更新中    |   ![](https://img.shields.io/badge/维护-更新中-yellow.svg)   |
+|    `gray`     |    禁用、无状态    |  [![](https://img.shields.io/badge/构建-无状态-gray.svg)]()  |
+
+**进阶:带参数模板**
+
+圆角方形 + 自带图标
+
+```markdown
+https://img.shields.io/badge/文字-内容-颜色.svg?style=flat-square&logo=图标名
+```
+
+常用图标:
+
+`logo=windows`、`logo=github`、`logo=python`、`logo=vue`
+
+示例：
+
+```markdown
+[![](https://img.shields.io/badge/Python-3.10+-brightgreen.svg?style=flat-square&logo=python)]()
+```
+
+[![](https://img.shields.io/badge/Python-3.10+-brightgreen.svg?style=flat-square&logo=python)]()
+
+
+
+> [!TIP]
+>
+> 文字中有**空格**用 `_` 代替，自动转为空格；
+>
+> 不需要跳转就把后面链接留空 `()`；
+>
+> 支持十六进制颜色：把颜色换成 `#4472c4` 这类色值；
+>
+> 在线懒人生成：官网 https://shields.io/ 填参数直接复制 Markdown 代码。
 
 ## 十六、使用Mermaid绘图
 
