@@ -72,7 +72,8 @@
 							  
 %一般在这里(documentclass下面)导入package
 \usepackage{ctex}
-
+\usepackage[style=gb7714-2015]{biblatex} %用于文献引用
+\addbibresource{ref.bib} %指定参考文献来源于该文件所在目录下的ref.bib文件
 
 \title{文章标题} %标题
 \author{xxx\thanks{Email:xxx@gmail.com} \and xxx} %作者，若有多个，用\and连接，邮箱可选
@@ -82,6 +83,8 @@
 %以下区域称作正文区Body
 \begin{document}
 
+
+\printbibliography %渲染参考文献
 \end{document}
 ```
 
@@ -171,6 +174,14 @@
 \end{array}
 \right ]
 \]
+
+
+
+还可以用`matrix`,`pmatrix`,`bmatrix`,`Bmatrix`环境更方便地表示矩阵,`vmatrix`,`Vmatrix`表示行列式，可以省去`\left`,`\right`
+
+前面加上`+`还能优化显示如`+pmatrix`
+
+示例：
 
 
 
